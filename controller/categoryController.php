@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'baseController.php';
 
 class CategoryModel
 {
@@ -9,16 +10,8 @@ class CategoryModel
 }
 
 
-class Category
+class Category extends baseController
 {
-    private $pdo;
-
-    function __construct()
-    {
-        $conn = new connection();
-        $this->pdo = $conn->myPDO;
-    }
-
     public function addCategory(CategoryModel $model)
     {
         try {
@@ -30,6 +23,11 @@ class Category
             } else {
                 e("خطا در ذخیره اطلاعات", 'alert-danger');
             }
+            echo "<script>
+         window.setTimeout(function(){
+        window.location.href = '/store/category.view.php';
+ }, 3000);
+</script>";
         } catch (PDOException $e) {
             e($e->getMessage(), "alert-danger");
         }
