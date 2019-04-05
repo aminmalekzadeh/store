@@ -58,7 +58,7 @@ require_once 'section/content.php';
                                                     $fetch = $result->fetchAll();
                                                     foreach ($fetch as $row){
 
-                                                        echo "<option value=\"\">";
+                                                        echo "<option value=\"$row['id'];\">";
                                                         echo $row['Name'];
                                                         echo "</option>";
                                                     }
