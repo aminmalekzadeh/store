@@ -7,7 +7,7 @@ $parent = $_POST['parent'];
 $id = $_POST['id'];
 try{
     $myPDO = new PDO("mysql:host=$host;dbname=$namedb",$username,$password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-    $result = $myPDO->prepare('INSERT INTO category(ID,Name,parent) VALUES (:ID,:name,:parent)');
+    $result = $myPDO->prepare('INSERT INTO category(id,name,parent) VALUES (:ID,:name,:parent)');
     $result->bindParam(':name',$name);
     $result->bindParam(':parent',$parent);
     $result->bindParam(':ID',$id);
