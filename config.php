@@ -1,7 +1,21 @@
 <?php
-$host = "localhost";
-$namedb = "market";
-$username = "root";
-$password = "1";
 
+
+class connection
+{
+    private $host = "localhost";
+    private $namedb = "market";
+    private $username = "root";
+    private $password = "";
+    public $myPDO;
+
+    function __construct()
+    {
+        try {
+            $this->myPDO = new PDO("mysql:host=$this->host;dbname=$this->namedb", $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        } catch (PDOException $e) {
+            e($e->getMessage(), "alert-danger");
+        }
+    }
+}
 
