@@ -923,15 +923,16 @@
       <Position>1</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="231" name="Name">
+    <column id="233" parent="231" name="NAME">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="231" name="parent">
+    <column id="234" parent="231" name="PARENT">
       <Position>3</Position>
       <DataType>int(2)|0s</DataType>
       <NotNull>1</NotNull>
