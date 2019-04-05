@@ -923,7 +923,6 @@
       <Position>1</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="233" parent="231" name="Name">
@@ -932,19 +931,13 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="231" name="tag">
+    <column id="234" parent="231" name="parent">
       <Position>3</Position>
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="235" parent="231" name="parent">
-      <Position>4</Position>
       <DataType>int(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="236" parent="231" name="PRIMARY">
+    <key id="235" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

@@ -43,31 +43,39 @@ require_once 'section/content.php';
                                 </div>
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-10">
                                         <div class="form-group">
                                             <label for="projectinput5">انتخاب</label>
                                             <select  id="projectinput5" name="parent"
                                                     class="form-control">
-                                                <option id="menu1" value="main-menu">دسته اصلی</option>
-                                                <option id="menu2" value="sub-menu">زیر دسته</option>
-                                            </select>
+                                                <option value="0">دسته اصلی</option>
+                                                <?php
+                                                require_once 'config.php';
+                                                try{
+                                                    $myPDO = new PDO("mysql:host=$host;dbname=$namedb",$username,$password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+                                                    $result = $myPDO->prepare('SELECT * FROM category');
+                                                    $result->execute();
+                                                    $fetch = $result->fetchAll();
+                                                    foreach ($fetch as $row){
 
+                                                        echo "<option value=\"\">";
+                                                        echo $row['Name'];
+                                                        echo "</option>";
+                                                    }
+                                                    e("اطلاعات با موفقیت ثبت شد.","alert-success");
+                                                }catch (PDOException $e){
+                                                    e($e->getMessage(),"alert-danger");
+                                                }
+                                                ?>
+
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <select name="category" class="form-control">
-                                            <option value="2">hello</option>
-                                        </select>
-                                    </div>
+
 
                                 </div>
                             </div>
-                            <script>
-                                var myelement;
-                                if (myelement === $("menu1")){
 
-                                }
-                            </script>
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-success">
                                     <i class="icon-note"></i> ذخیره
