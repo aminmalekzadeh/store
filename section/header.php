@@ -9,7 +9,7 @@
                 <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
                     <li class="has-sub nav-item"><a href="#"><i class="icon-home"></i><span data-i18n="" class="menu-title">داشبورد</span><span class="tag badge badge-pill badge-danger mt-1">2</span></a>
                         <ul class="menu-content">
-                            <li class="active"><a href="index.php" class="menu-item">تجارت الکترونیک</a>
+                            <li class="active"><a href="../index.php" class="menu-item">تجارت الکترونیک</a>
                             </li>
                             <li><a href="../app-assets/dashboard-analytics.html" class="menu-item">تجزیه و تحلیل</a>
                             </li>
@@ -27,9 +27,9 @@
                     </li>
                     <li class="has-sub nav-item"><a href="#"><i class="icon-layers"></i><span data-i18n="" class="menu-title">دسته بندی</span></a>
                         <ul class="menu-content">
-                            <li><a href="category.view.php" class="menu-item">اضافه نمودن</a>
+                            <li><a href="/store/View/category.view.php" class="menu-item">اضافه نمودن</a>
                             </li>
-                            <li><a href="edit-category.php" class="menu-item">ویرایش</a>
+                            <li><a href="/store/View/edit-category.view.php" class="menu-item">ویرایش</a>
                             </li>
                         </ul>
                     </li>

@@ -13,5 +13,4 @@ $cat = new Category();
 $cat->addCategory($model);
 
 
-//*
 ?>
