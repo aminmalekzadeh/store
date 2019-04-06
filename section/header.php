@@ -27,7 +27,7 @@
                     </li>
                     <li class="has-sub nav-item"><a href="#"><i class="icon-layers"></i><span data-i18n="" class="menu-title">دسته بندی</span></a>
                         <ul class="menu-content">
-                            <li><a href="/category" class="menu-item">اضافه نمودن</a>
+                            <li><a href="/store/View/category.view.php" class="menu-item">اضافه نمودن</a>
                             </li>
                             <li><a href="/store/View/edit-category.view.php" class="menu-item">ویرایش</a>
                             </li>

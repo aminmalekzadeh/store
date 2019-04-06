@@ -22,13 +22,15 @@ class Category
     public function addCategory(CategoryModel $model)
     {
         try {
-            $result = $this->pdo->prepare('INSERT INTO category(NAME,PARENT) VALUES (:name,:parent)');
-            $result->bindParam(':name', $model->name);
-            $result->bindParam(':parent', $model->parent);
-            if ($result->execute()) {
-                e("اطلاعات با موفقیت ثبت شد.", "alert-success");
-            } else {
-                e("خطا در ذخیره اطلاعات", 'alert-danger');
+            if ($_SERVER['REQUEST_METHOD'] == 'post') {
+                $result = $this->pdo->prepare('INSERT INTO category(NAME,PARENT) VALUES (:name,:parent)');
+                $result->bindParam(':name', $model->name);
+                $result->bindParam(':parent', $model->parent);
+                if ($result->execute()) {
+                    e("اطلاعات با موفقیت ثبت شد.", "alert-success");
+                } else {
+                    e("خطا در ذخیره اطلاعات", 'alert-danger');
+                }
             }
         } catch (PDOException $e) {
             e($e->getMessage(), "alert-danger");
@@ -38,13 +40,8 @@ class Category
     public function getCategory()
     {
         try {
-
             $result = $this->pdo->prepare('SELECT * FROM category');
-            if ($result->execute()) {
-                e("اطلاعات با موفقیت ثبت شد.", "alert-success");
-            } else {
-                e("خطا در ذخیره اطلاعات", 'alert-danger');
-            }
+            $result->execute();
             $fetch = $result->fetchAll();
             return $fetch;
         } catch (PDOException $e) {

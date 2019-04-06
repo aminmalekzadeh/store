@@ -6,17 +6,17 @@ require_once 'section/footer.php';
 
 $request = $_SERVER['REDIRECT_URL'];
 switch ($request) {
-    case "/":
-        require_once 'index.php';
+    case '/':
+        require_once __DIR__.'index.php';
         break;
-    case "/category":
-        require_once '../store/View/category.view.php';
+    case '/category':
+        require_once __DIR__.'../store/View/category.view.php';
         break;
-    case "/edit-category":
-        require_once '../store/View/edit-category.view.php';
+    case '/edit-category':
+        require_once __DIR__.'../store/View/edit-category.view.php';
         break;
     default:
-        echo "404 Error!!";
+        require_once __DIR__.'../store/app-assets/error-page.html';
         break;
 }
 ?>
