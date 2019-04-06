@@ -26,7 +26,7 @@ class Category extends baseController
             echo "<script>
          window.setTimeout(function(){
         window.location.href = '/store/category.view.php';
- }, 3000);
+            }, 3000);
 </script>";
         } catch (PDOException $e) {
             e($e->getMessage(), "alert-danger");
