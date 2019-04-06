@@ -1,22 +1,16 @@
 <?php
-require_once 'section/head.php';
-require_once 'section/header.php';
-require_once 'section/content.php';
-require_once 'section/footer.php';
+include_once 'Request.php';
+include_once 'Router.php';
+$router = new Router(new Request);
 
-$request = $_SERVER['REDIRECT_URL'];
-switch ($request) {
-    case "/":
-        require_once 'index.php';
-        break;
-    case "/category":
-        require_once '../store/View/category.view.php';
-        break;
-    case "/edit-category":
-        require_once '../store/View/edit-category.view.php';
-        break;
-    default:
-        echo "404 Error!!";
-        break;
-}
-?>
+$router->get('/', function () {
+  require_once 'View/category.view.php';
+});
+$router->get('/profile', function ($request) {
+    return <<<HTML
+<h1>Profile</h1>
+HTML;
+});
+$router->post('/data', function ($request) {
+    return json_encode($request->getBody());
+});

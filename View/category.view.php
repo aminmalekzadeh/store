@@ -1,9 +1,9 @@
 <?php
-require_once '../function.php';
-require_once '../section/head.php';
-require_once '../section/header.php';
-require_once '../section/content.php';
-require '../controller/categoryController.php';
+require_once 'function.php';
+require_once 'section/head.php';
+require_once 'section/header.php';
+require_once 'section/content.php';
+require 'controller/categoryController.php';
 ?>
     <div class="main-panel">
     <div class="main-content">
@@ -42,9 +42,9 @@ require '../controller/categoryController.php';
                                                         class="form-control">
                                                     <option value="0">دسته اصلی</option>
                                                     <?php
-                                                    require_once '../config.php';
                                                     $cat = new Category();
                                                     $categories = $cat->getCategory();
+
                                                     foreach ($categories as $row) {
                                                         ?>
 

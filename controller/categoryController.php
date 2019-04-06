@@ -38,6 +38,7 @@ class Category
     public function getCategory()
     {
         try {
+
             $result = $this->pdo->prepare('SELECT * FROM category');
             if ($result->execute()) {
                 e("اطلاعات با موفقیت ثبت شد.", "alert-success");
