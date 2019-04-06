@@ -2,7 +2,7 @@
 require_once 'section/head.php';
 require_once 'function.php';
 require_once 'config.php';
-require 'controller/categoryController.php';
+require_once 'controller/categoryController.php';
 
 $model = new CategoryModel();
 $model->name =  $_POST['name'];
