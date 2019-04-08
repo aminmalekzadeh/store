@@ -63,7 +63,7 @@ require '../controller/categoryController.php';
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <button id="<?php echo $row['ID']; ?>" class="btn btn-sm btn-outline-primary round mb-0"
+                                                        <button id="<?php echo $row['ID']; ?>"  class="btn btn-sm btn-outline-primary round mb-0"
                                                                 type="button" data-toggle="modal"
                                                                 data-target="#default" onclick="myFunction(this.id)">ویرایش
                                                         </button>
