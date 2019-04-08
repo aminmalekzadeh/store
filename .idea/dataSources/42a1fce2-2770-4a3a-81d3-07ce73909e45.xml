@@ -919,29 +919,70 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="231" parent="5" name="category"/>
-    <column id="232" parent="231" name="ID">
+    <table id="232" parent="5" name="feature"/>
+    <column id="233" parent="231" name="ID">
       <Position>1</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="231" name="NAME">
+    <column id="234" parent="231" name="NAME">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="231" name="PARENT">
+    <column id="235" parent="231" name="PARENT">
       <Position>3</Position>
       <DataType>int(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="235" parent="231" name="PRIMARY">
+    <key id="236" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="237" parent="232" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="238" parent="232" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="239" parent="232" name="parent_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="232" name="cat_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="241" parent="232" name="Relationfeature">
+      <ColNames>cat_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="242" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="243" parent="232" name="Relationfeature">
+      <ColNames>cat_id</ColNames>
+      <RefSchemaName>market</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

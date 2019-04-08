@@ -22,7 +22,6 @@ class Category
     public function addCategory(CategoryModel $model)
     {
         try {
-            if ($_SERVER['REQUEST_METHOD'] == 'post') {
                 $result = $this->pdo->prepare('INSERT INTO category(NAME,PARENT) VALUES (:name,:parent)');
                 $result->bindParam(':name', $model->name);
                 $result->bindParam(':parent', $model->parent);
@@ -32,7 +31,7 @@ class Category
                     e("خطا در ذخیره اطلاعات", 'alert-danger');
                 }
             }
-        } catch (PDOException $e) {
+         catch (PDOException $e) {
             e($e->getMessage(), "alert-danger");
         }
     }
@@ -48,6 +47,19 @@ class Category
             e($e->getMessage(), "alert-danger");
         }
     }
+    public function getcategory_mainitem(){
+        try {
+            $result = $this->pdo->prepare('SELECT * FROM category where PARENT = 0');
+            $result->execute();
+            $fetch = $result->fetchAll();
+            return $fetch;
+        } catch (PDOException $e) {
+            e($e->getMessage(), "alert-danger");
+        }
+    }
+
+
+
 }
 
 

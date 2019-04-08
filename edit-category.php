@@ -7,3 +7,4 @@ include_once 'config.php';
 
 require_once 'section/footer.php';
 
+?>
