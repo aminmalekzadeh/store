@@ -154,10 +154,11 @@ require '../controller/categoryController.php';
                                                                     <script>
 
                                                                         function myFunction(clicked_id) {
-                                                                            alert(clicked_id);
+                                                                            // alert(clicked_id);
+                                                                            $('input#id').val(clicked_id);
                                                                         }
                                                                         $(function () {
-                                                                            $(' input #id').val(this.id);
+
                                                                         });
                                                                     </script>
                                                                     <input type="hidden" id="id" name="id" value="">

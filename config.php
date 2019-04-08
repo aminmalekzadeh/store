@@ -6,7 +6,7 @@ class connection
     private $host = "localhost";
     private $namedb = "market";
     private $username = "root";
-    private $password = "1";
+    private $password = "";
     public $myPDO;
 
     function __construct()
