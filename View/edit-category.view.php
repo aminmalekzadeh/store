@@ -156,6 +156,7 @@ require '../controller/categoryController.php';
                                                                         function myFunction(clicked_id) {
                                                                             // alert(clicked_id);
                                                                             $('input#id').val(clicked_id);
+                                                                            $('input#projectinput1').val(clicked_id);
                                                                         }
                                                                         $(function () {
 
