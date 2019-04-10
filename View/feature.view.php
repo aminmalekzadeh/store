@@ -31,10 +31,11 @@ require_once '../controller/categoryController.php';
                                 } ?>
                                 <input name="title" type="text" class="form-control"
                                        id="todoTitle" placeholder="عنوان" required>
-                                <input type="hidden" id="id1" name="id" value="<?php echo $id?>">
+                                <input type="hidden" id="id1" name="cat_id" value="<?php echo $id?>">
+                                <input type="hidden" name="parent" value="0">
 
                                 <div class="form-control-position control-position-right">
-                                    <i class="ft-image"></i>
+                                    <i class="ft-airplay"></i>
                                 </div>
                             </fieldset>
 
