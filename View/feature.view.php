@@ -4,7 +4,8 @@ require_once '../section/head.php';
 require_once '../section/header.php';
 require_once '../section/content.php';
 require_once '../controller/FeatureController.php';
-require '../controller/categoryController.php';
+require_once '../controller/categoryController.php';
+
 ?>
 <div class="main-panel">
     <div class="main-content">
@@ -20,41 +21,25 @@ require '../controller/categoryController.php';
                                 <div class="form-control-position">
                                     <i class="icon-emoticon-smile"></i>
                                 </div>
+                                <?php
+                                require_once '../config.php';
+                                $id = $_GET['id'];
+                                $cat = new Category();
+                                $categories = $cat->getcategory_mainitem();
+                                foreach ($categories as $row) {
 
+                                } ?>
                                 <input name="title" type="text" class="form-control"
-                                       id="todoTitle" placeholder="عنوان">
+                                       id="todoTitle" placeholder="عنوان" required>
+                                <input type="hidden" id="id1" name="id" value="<?php echo $id?>">
+
                                 <div class="form-control-position control-position-right">
                                     <i class="ft-image"></i>
                                 </div>
                             </fieldset>
 
 
-                            <fieldset
-                                    class="form-group position-relative has-icon-left col-md-6 col-12 mb-1">
 
-                                <div class="form-group">
-                                    <div class="form-control-position control-position-right">
-                                        <label for="projectinput5">انتخاب</label>
-                                    </div>
-
-                                    <select id="projectinput5" name="parent"
-                                            class="form-control">
-                                        <option>دسته بندی ها</option>
-                                        <?php
-                                        require_once '../config.php';
-                                        $cat = new Category();
-                                        $category = $cat->getcategory();
-                                        foreach ($category as $row) {
-                                        ?>
-                                        <option value="<?php echo $row['ID']; ?>">
-                                            <?php echo $row['NAME']; ?>
-                                        </option>
-                                        <?php } ?>
-                                    </select>
-
-                                </div>
-
-                            </fieldset>
                             <fieldset
                                     class="form-group position-relative has-icon-left col-md-2 col-12 mb-1">
                                 <button type="submit" class="btn btn-primary">
@@ -62,6 +47,7 @@ require '../controller/categoryController.php';
                                     ایجاد
                                 </button>
                             </fieldset>
+
                         </form>
 
 

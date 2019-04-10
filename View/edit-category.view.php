@@ -57,7 +57,7 @@ require '../controller/categoryController.php';
                                                     </div>
                                                     <div class="col-md-4">
                                                         <a class="btn btn-sm btn-outline-success round mb-0"
-                                                           href="feature.view.php"
+                                                           href="feature.view.php?id=<?php echo $row['ID']; ?>"
                                                         >افزودن ویژگی
                                                         </a>
                                                     </div>
