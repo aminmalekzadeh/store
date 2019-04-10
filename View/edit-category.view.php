@@ -21,7 +21,7 @@ require '../controller/categoryController.php';
                             </a>
                         </div>
 
-                        <div class="card-content mt-1">
+                        <div class="card-content mt-md-2 mt-auto">
                             <div class="table-responsive">
                                 <table class="table table-hover table-xl mb-0"
                                        id="recent-orders">
@@ -154,12 +154,9 @@ require '../controller/categoryController.php';
                                                                     <script>
 
                                                                         function myFunction(clicked_id) {
-                                                                            // alert(clicked_id);
                                                                             $('input#id').val(clicked_id);
                                                                         }
-                                                                        $(function () {
 
-                                                                        });
                                                                     </script>
                                                                     <input type="hidden" id="id" name="id" value="">
                                                                     <input  type="submit" value=" ذخیره تغییرات" class="btn btn-outline-primary">

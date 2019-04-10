@@ -4,58 +4,68 @@
         <div class="sidebar-header">
             <div class="logo clearfix"><a href="../app-assets/index-2.html"
                                           class="logo-text float-right">
-                    <div class="logo-img"><img src="../app-assets/img/logo.png" alt="Convex Logo"/>
+                    <div class="logo-img"><img src="../app-assets/img/logo.png"
+                                               alt="Convex Logo"/>
                     </div>
-                    <span class="text align-middle">CONVEX</span></a><a id="sidebarToggle"
-                                                                        href="javascript:;"
-                                                                        class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
+                    <span class="text align-middle">Panel</span></a><a id="sidebarToggle"
+                                                                       href="javascript:;"
+                                                                       class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                             data-toggle="expanded" class="ft-disc toggle-icon"></i></a><a
                         id="sidebarClose" href="javascript:;"
                         class="nav-close d-block d-md-block d-lg-none d-xl-none"><i
                             class="ft-circle"></i></a></div>
         </div>
-        <div class="sidebar-content">
-            <div class="nav-container">
-                <ul id="main-menu-navigation" data-menu="menu-navigation"
-                    class="navigation navigation-main">
-                    <li class="has-sub nav-item"><a href="#"><i class="icon-home"></i><span
-                                    data-i18n="" class="menu-title">داشبورد</span><span
-                                    class="tag badge badge-pill badge-danger mt-1">2</span></a>
-                        <ul class="menu-content">
-                            <li class="active"><a href="../index.php" class="menu-item">تجارت
-                                    الکترونیک</a>
-                            </li>
-                            <li><a href="../app-assets/dashboard-analytics.html" class="menu-item">تجزیه
-                                    و تحلیل</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub nav-item"><a href="#"><i
-                                    class="icon-screen-desktop"></i><span data-i18n=""
-                                                                          class="menu-title">برنامه ها</span></a>
-                        <ul class="menu-content">
-                            <li><a href="../app-assets/chat.html" class="menu-item">گفت و گو</a>
-                            </li>
-                            <li><a href="../app-assets/taskboard.html" class="menu-item">تابلو
-                                    وظایف</a>
-                            </li>
-                            <li><a href="../app-assets/calendar.html" class="menu-item">تقویم</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub nav-item"><a href="#"><i class="icon-layers"></i><span
-                                    data-i18n="" class="menu-title">دسته بندی</span></a>
-                        <ul class="menu-content">
-                            <li><a href="/store/View/category.view.php" class="menu-item">اضافه
-                                    نمودن</a>
-                            </li>
-                            <li><a href="/store/View/edit-category.view.php" class="menu-item">ویرایش</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+        <div id="topheader">
+            <div class="sidebar-content">
+                <div class="nav-container">
+                    <ul id="main-menu-navigation" data-menu="menu-navigation"
+                        class="navigation navigation-main">
+                        <li class="has-sub nav-item"><a href="#"><i class="icon-home"></i><span
+                                        data-i18n="" class="menu-title">داشبورد</span><span
+                                        class="tag badge badge-pill badge-danger mt-1">2</span></a>
+                            <ul class="menu-content">
+                                <li><a href="../index.php" class="menu-item">تجارت
+                                        الکترونیک</a>
+                                </li>
+                                <li><a href="../app-assets/dashboard-analytics.html"
+                                       class="menu-item">تجزیه
+                                        و تحلیل</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub nav-item"><a href="#"><i
+                                        class="icon-screen-desktop"></i><span data-i18n=""
+                                                                              class="menu-title">برنامه ها</span></a>
+                            <ul class="menu-content ">
+                                <li><a href="../app-assets/chat.html" class="menu-item">گفت و گو</a>
+                                </li>
+                                <li><a href="../app-assets/taskboard.html" class="menu-item">تابلو
+                                        وظایف</a>
+                                </li>
+                                <li><a href="../app-assets/calendar.html"
+                                       class="menu-item">تقویم</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub nav-item"><a href="#"><i class="icon-layers"></i><span
+                                        data-i18n="" class="menu-title">دسته بندی</span></a>
+                            <ul id="MyTab" class="menu-content">
+                                <li class="active"><a
+                                            href="/store/View/category.view.php"
+                                            class="menu-item">اضافه
+                                        نمودن</a>
+                                </li>
+                                <li><a href="/store/View/edit-category.view.php"
+                                                   class="menu-item">ویرایش</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+
         <div class="sidebar-background"></div>
     </div>
     <div class="customizer border-left-blue-grey border-left-lighten-4 d-none d-sm-none d-md-block">
@@ -67,7 +77,8 @@
             <h4 class="mb-0 text-bold-400">تم سفارشی</h4>
             <p>سفارشی کردن و پیش نمایش در زمان واقعی</p>
             <hr>
-            <h6 class="text-center text-bold-500 mb-3 text-uppercase">تصویر پس زمینه نوار کناری</h6>
+            <h6 class="text-center text-bold-500 mb-3 text-uppercase">تصویر پس زمینه نوار
+                کناری</h6>
             <div class="cz-bg-image row">
                 <div class="col mb-3"><img src="../app-assets/img/sidebar-bg/01.jpg" width="50"
                                            height="100" alt="Bg image1"
@@ -107,7 +118,8 @@
                 </div>
             </div>
             <hr>
-            <h6 class="text-center text-bold-500 mb-3 text-uppercase">گزینه های رنگ نوار کناری</h6>
+            <h6 class="text-center text-bold-500 mb-3 text-uppercase">گزینه های رنگ نوار
+                کناری</h6>
             <div class="cz-bg-color">
                 <div class="row p-1">
                     <div class="col mb-3"><span style="width:50px; height:100px;"
@@ -163,7 +175,8 @@
             <hr>
             <div>
                 <label for="cz-sidebar-width" class="text-bold-400">عرض نوار باریکه</label>
-                <select id="cz-sidebar-width" class="custom-select cz-sidebar-width float-right">
+                <select id="cz-sidebar-width"
+                        class="custom-select cz-sidebar-width float-right">
                     <option value="small">کوچک</option>
                     <option value="medium" selected="">متوسط</option>
                     <option value="large">بزرگ</option>
@@ -180,9 +193,10 @@
                             class="icon-bar"></span></button>
                 <span class="d-lg-none navbar-right navbar-collapse-toggle"><a
                             class="open-navbar-container"><i
-                                class="ft-more-vertical"></i></a></span><a id="navbar-fullscreen"
-                                                                           href="javascript:;"
-                                                                           class="ml-2 display-inline-block apptogglefullscreen"><i
+                                class="ft-more-vertical"></i></a></span><a
+                        id="navbar-fullscreen"
+                        href="javascript:;"
+                        class="ml-2 display-inline-block apptogglefullscreen"><i
                             class="ft-maximize blue-grey darken-4 toggleClass"></i>
                     <p class="d-none">تمام صفحه</p></a><a class="mr-2 display-inline-block"><i
                             class="ft-shopping-cart blue-grey darken-4"></i>
@@ -205,10 +219,11 @@
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item mt-1 navbar-search text-left dropdown"><a id="search"
-                                                                                      href="#"
-                                                                                      data-toggle="dropdown"
-                                                                                      class="nav-link dropdown-toggle"><i
+                        <li class="nav-item mt-1 navbar-search text-left dropdown"><a
+                                    id="search"
+                                    href="#"
+                                    data-toggle="dropdown"
+                                    class="nav-link dropdown-toggle"><i
                                         class="ft-search blue-grey darken-4"></i></a>
                             <div aria-labelledby="search"
                                  class="search dropdown-menu dropdown-menu-right">
@@ -329,9 +344,5 @@
         </div>
     </nav>
 
-<!--    <script>-->
-<!--        $(' li .menu-item').click(function(){-->
-<!--            $(' li.active .menu-item').removeClass('active');-->
-<!--            $(this).addClass("active");-->
-<!--        })-->
-<!--    </script>-->
+
+

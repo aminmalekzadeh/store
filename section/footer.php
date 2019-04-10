@@ -14,7 +14,12 @@
 <!-- BEGIN CONVEX JS-->
 <script src="../app-assets/js/app-sidebar.js"></script>
 <script src="../app-assets/js/notification-sidebar.js"></script>
-
+<script>
+    $('#topheader .menu-content a').on('click', function () {
+        $('#topheader .menu-content').find('li.active').removeClass('active');
+        $(this).parent('li').addClass('active');
+    });
+</script>
 <script src="../app-assets/js/customizer.js"></script>
 <!-- END CONVEX JS-->
 <!-- BEGIN PAGE LEVEL JS-->
