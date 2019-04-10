@@ -3,12 +3,71 @@ require_once '../function.php';
 require_once '../section/head.php';
 require_once '../section/header.php';
 require_once '../section/content.php';
+require_once '../controller/FeatureController.php';
 require '../controller/categoryController.php';
 ?>
 <div class="main-panel">
     <div class="main-content">
         <div class="content-wrapper">
             <div class="container-fluid">
+                <div class="col-md-10">
+                    <div class="card-block pt-3">
+                        <h6 class="text-bold-500">ایجاد ویژگی</h6>
+
+                        <form action="../feature.php" class="taskboard-app-input row" method="post">
+                            <fieldset
+                                    class="form-group position-relative has-icon-left col-md-4 col-12 mb-1">
+                                <div class="form-control-position">
+                                    <i class="icon-emoticon-smile"></i>
+                                </div>
+
+                                <input name="title" type="text" class="form-control"
+                                       id="todoTitle" placeholder="عنوان">
+                                <div class="form-control-position control-position-right">
+                                    <i class="ft-image"></i>
+                                </div>
+                            </fieldset>
+
+
+                            <fieldset
+                                    class="form-group position-relative has-icon-left col-md-6 col-12 mb-1">
+
+                                <div class="form-group">
+                                    <div class="form-control-position control-position-right">
+                                        <label for="projectinput5">انتخاب</label>
+                                    </div>
+
+                                    <select id="projectinput5" name="parent"
+                                            class="form-control">
+                                        <option>دسته بندی ها</option>
+                                        <?php
+                                        require_once '../config.php';
+                                        $cat = new Category();
+                                        $category = $cat->getcategory();
+                                        foreach ($category as $row) {
+                                        ?>
+                                        <option value="<?php echo $row['ID']; ?>">
+                                            <?php echo $row['NAME']; ?>
+                                        </option>
+                                        <?php } ?>
+                                    </select>
+
+                                </div>
+
+                            </fieldset>
+                            <fieldset
+                                    class="form-group position-relative has-icon-left col-md-2 col-12 mb-1">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-paper-plane-o hidden-lg-up"></i>
+                                    ایجاد
+                                </button>
+                            </fieldset>
+                        </form>
+
+
+                    </div>
+                </div>
+
                 <div class="col-12 col-md-8" id="recent-sales">
                     <div class="card">
                         <div class="card-header">
@@ -37,43 +96,44 @@ require '../controller/categoryController.php';
 
                                     <?php
                                     require_once '../config.php';
-                                    $cat = new Category();
-                                    $categories = $cat->getcategory_mainitem();
-                                    foreach ($categories as $row) {
-                                        ?>
-                                        <tr id="row-tb">
-                                            <td class="text-truncate"><?php echo $row['ID']; ?></td>
+                                    $f = new Feature();
+                                    $feature = $f->getFeature();
+                                    foreach ($feature as $row) {
+                                    ?>
+                                    <tr id="row-tb">
+                                        <td class="text-truncate"><?php echo $row['ID'];?></td>
 
-                                            <td class="text-truncate"><?php echo $row['NAME']; ?></td>
-                                            <td>
-                                                <div class="row">
+                                        <td class="text-truncate"><?php echo $row['name'];?></td>
+                                        <td>
+                                            <div class="row">
 
-                                                    <div class="col-md-4">
-                                                        <a id="delete"
-                                                           class="btn btn-sm btn-outline-danger round mb-0"
-                                                           href="../delete.php?id=<?php
-                                                           echo $row['ID']; ?>" type="submit">حذف
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <a class="btn btn-sm btn-outline-success round mb-0"
-                                                           href="feature.view.php"
-                                                        >افزودن ویژگی
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <button id="<?php echo $row['ID']; ?>"  class="btn btn-sm btn-outline-primary round mb-0"
-                                                                type="button" data-toggle="modal"
-                                                                data-target="#default" onclick="myFunction(this.id)">ویرایش
-                                                        </button>
-                                                    </div>
-
+                                                <div class="col-md-4">
+                                                    <a id="delete"
+                                                       class="btn btn-sm btn-outline-danger round mb-0"
+                                                       href="../delete.php?id=" type="submit">حذف
+                                                    </a>
                                                 </div>
-                                            </td>
-                                        </tr>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-sm btn-outline-primary round mb-0"
+                                                            type="button" data-toggle="modal"
+                                                            data-target="#default">افزودن زیر ویژگی
+                                                    </button>
+                                                </div>
 
+                                                <div class="col-md-4">
+                                                    <button id=""
+                                                            class="btn btn-sm btn-outline-primary round mb-0"
+                                                            type="button" data-toggle="modal"
+                                                            data-target="#default"
+                                                            onclick="myFunction(this.id)">ویرایش
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <?php } ?>
+
                                     <script>
                                         $('#recent-orders tbody').on('click', '#delete', function () {
                                             $(this).closest('tr').remove();
@@ -158,8 +218,11 @@ require '../controller/categoryController.php';
                                                                         }
 
                                                                     </script>
-                                                                    <input type="hidden" id="id" name="id" value="">
-                                                                    <input  type="submit" value=" ذخیره تغییرات" class="btn btn-outline-primary">
+                                                                    <input type="hidden" id="id"
+                                                                           name="id" value="">
+                                                                    <input type="submit"
+                                                                           value=" ذخیره تغییرات"
+                                                                           class="btn btn-outline-primary">
 
                                                                 </div>
                                                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -220,7 +283,6 @@ require '../controller/categoryController.php';
                             <button type="button" class="btn grey btn-outline-secondary"
                                     data-dismiss="modal">بستن
                             </button>
-
 
 
                         </div>
